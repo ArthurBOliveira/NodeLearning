@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Learning Node</title>
+    </head>
+    <body style="color: white; background-color: black;">
+        <h1>May Node, Express and MongonDB be with you.</h1>
+
+        <hr/>
+
+        <div>
+            <h2>Quotes</h2>
+            <ul class="quotes">
+            <% for(var i=0; i<quotes.length; i++) {%>
+                <li class="quote">
+                <span><%= i %></span>            
+                <span><%= quotes[i].name %></span>
+                <span><%= quotes[i].quote %></span>
+                <span><%= quotes[i]._id %></span>
+                </li>
+            <% } %>
+            </ul>
+        </div>
+
+
+        <hr/>
+        
+        <div>
+            <h2>Create Quote</h2>
+    
+            <form action="/quotes" method="POST">
+                <input type="text" placeholder="name" name="name">
+                <input type="text" placeholder="quote" name="quote">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <hr/>
+        
+        <div>
+            <h2>Update by Id</h2>
+            <input type="text" placeholder="id" id="updateId">
+            <input type="text" placeholder="quote" id="updateQuote">
+            <button id="update">Update</button>
+        </div>
+
+        <hr/>
+
+        <div>
+            <h2>Delete a quote by Id</h2>
+            <input type="text" placeholder="id" id="deleteId">
+            <button id="delete"> Delete </button>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
