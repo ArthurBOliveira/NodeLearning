@@ -43,6 +43,8 @@ app.post('/quotes', (req, res) => {
 app.put('/quotes', (req, res) => {
     var id = req.body.id.trim();
 
+    console.log(id);
+    
     db.collection('quotes')
         .updateOne({ _id: ObjectID(id) }, {
             $set: {
